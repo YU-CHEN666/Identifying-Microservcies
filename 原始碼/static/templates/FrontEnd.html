@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="手寫數字辨識器的前端介面">
+    <meta name="author" content="Mr.謝">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>手寫數字辨識器</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/MessagePage.css') }}">
+    <script src="{{ url_for('static', path='/JS/canvasDrawing.js') }}" type="module" defer></script>
+    <script src="{{ url_for('static', path='/JS/MessagePage.js') }}" type="module" defer></script>
+    <script src="{{ url_for('static', path='/JS/AJAX.js') }}" type="module" defer></script>
+  </head>
+  <style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 10px;
+    }
+    #writeArea {
+        width: 350px;
+        height: 350px;
+        outline: 1px solid black;
+        touch-action: none;       
+    }
+    .font_size_20 {
+      font-size: 20px;
+    }
+    #errorExampleLink:hover {
+      color:red;
+    }
+    @media (max-width:381px) and (pointer: fine){
+      #writeArea{
+        width: 100%;
+        height: calc(100vw - 16px - var(--scrollbar-width));
+      }
+    }
+    @media (max-width:351px) and (pointer: coarse){
+      #writeArea{
+        width: 100%;
+        height: calc(100vw - 16px);
+      }
+    }
+  </style>
+  <body>
+    <input id="token" style="display: none;" value="{{ token }}">
+    <span style="font-size: 24px;"><strong>手寫數字區域:</strong></span>
+    <canvas id="writeArea"></canvas>
+    <span class="font_size_20">請在上方區域寫下想要辨識的數字，支援兩位數，範圍:0 ~ 99。</span>
+    <div>
+      <button id="cleanButton" class="font_size_20" type="button">清除重寫</button>
+      <button id="sentButton" class="font_size_20" type="button">開始辨識</button>
+    </div>
+    <div style="font-size: 24px;">
+        <span><strong>辨識結果:</strong></span>
+        <span id="result">請先書寫數字</span>
+    </div>
+    <div class="font_size_20">
+      <div><strong style="font-size: 24px;">注意事項:</strong></div>
+      <ol style="margin: 0;">
+        <li>只能夠辨識兩位數。</li>
+        <li>兩個位數之間請間隔一點距離。</li>
+        <li>數字5、7在書寫時，請保持連續。</li>
+      </ol>
+      <a id="errorExampleLink" href="./ErrorExample">上述情況造成錯誤的範例</a>
+    </div>
+    <div id="messagePagebackground">
+      <div class="message_Page">
+        <div id="circleRotation"></div>
+        <img id="messagePageImage">
+        <div id="message"></div>
+        <button id="messagePageButton" type="button">確定</button>
+      </div>
+    </div>
+  </body>
+</html>

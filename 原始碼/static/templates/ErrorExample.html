@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+ <head>
+   <meta charset="utf-8">
+   <meta name="description" content="會造成錯誤的範例顯示頁面">
+   <meta name="author" content="Mr.謝">
+   <meta name="viewport" content="width=device-width,initial-scale=1">
+   <title>錯誤範例</title>
+ </head>
+ <style>
+   body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 10px;
+   }
+   img {
+      outline: 1px solid black;
+      max-width: 100%;
+      height: auto;
+   }
+   .font_size_20 {
+      font-size: 20px;
+   }
+   .flex_direction_column_to_row{
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;   
+      justify-content: center;
+   }
+ </style>
+ <body class="font_size_20">
+   <button id="backToHome" class="font_size_20" type="button">返回首頁</button>
+   <div><strong>1.數字5沒有連續:</strong>這會被辨識成二位數，並且因為距離太近無法辨識。</div>
+   <img src="{{ url_for('static', path='/ErrorExample/5.png') }}" width="277px" height="277px" alt="發生錯誤無法載入" title="5錯誤範例">
+   <div><strong>2.數字7沒有連續:</strong>這會被辨識成二位數17，而不是7。</div>
+   <img src="{{ url_for('static', path='/ErrorExample/7.png') }}" width="277px" height="277px" alt="發生錯誤無法載入" title="7錯誤範例">
+   <div><strong>3.兩位數間隔過近:</strong>當兩個位數歪斜且靠近，或是間隔過近，無法進行辨識。</div>
+   <img src="{{ url_for('static', path='/ErrorExample/11.png') }}" width="277px" height="277px" alt="發生錯誤無法載入" title="間隔過近錯誤範例">
+   <div><strong>4.誤判成3位數:</strong>以下情況會被辨識成3位數，無法進行辨識。</div>
+   <div class="flex_direction_column_to_row">
+    <img src="{{ url_for('static', path='/ErrorExample/12.png') }}" width="277px" height="277px" alt="發生錯誤無法載入" title="3位數錯誤範例-1">
+    <img src="{{ url_for('static', path='/ErrorExample/17.png') }}" width="277px" height="277px" alt="發生錯誤無法載入" title="3位數錯誤範例-2">
+   </div>
+  </body>
+  <script>
+    const backbBtn = document.getElementById('backToHome');
+    backbBtn.addEventListener('click',function(e) {
+      window.location.href = "/"
+    })
+  </script>  
+</html>
