@@ -68,4 +68,4 @@ detect = MyOwnDetect()
 2. 啟動伺服器
 3. 打開瀏覽器，前往[localhost:8000](http://localhost:8000/)
 # 實際運作影片
-網址:
+網址:[https://youtu.be/W1y17I-IsAA](https://youtu.be/W1y17I-IsAA)
