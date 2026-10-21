@@ -34,17 +34,17 @@ class MyOwnDetect(DetectAbstract):
 **辨識成功時**:請在類別設定以下屬性:
 ```python
 
-self.sucess = True  #表示辨識成功
-self.message = ""   #成功時給空字串
-self.result = "5"   #辨識結果，假設是5
+self.sucess = True         #表示辨識成功
+self.message = "辨識成功"   #這會顯示在前端
+self.result = "5"          #辨識結果，假設是5
 
 ```
 **辨識失敗時**:請在類別設定以下屬性:
 ```python
 
-self.sucess = False        #表示辨識失敗
-self.message = "無法辨識"   #這會顯示在前端，可以向使用者傳遞資訊，例如造成錯誤的原因
-self.result = ""           #辨識結果，失敗時給空字串
+self.sucess = False       #表示辨識失敗
+self.message = "無法辨識"  #這會顯示在前端，可以向使用者傳遞資訊，例如造成錯誤的原因
+self.result = ""          #辨識結果，失敗時給空字串
 
 ```
 ### :two:載入實作類別:
