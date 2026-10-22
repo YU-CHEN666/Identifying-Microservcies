@@ -11,13 +11,18 @@
 |模組名稱|版本|
 |-------|----|
 |numpy|1.26.4|
-|opencv|4.10.0.84|
+|opencv-python|4.10.0.84|
 |PyQt6|6.11.0|
 |tensorflow|2.17.0|
 |keras|3.5.0|
 |fastapi|0.141.1|
 
-備註:關於fastapi，我是安裝fastapi[standard-no-fastapi-cloud-cli]
+備註:關於fastapi，我是安裝fastapi[standard-no-fastapi-cloud-cli]\
+可使用下列指令一次性安裝所有模組:
+```cmd
+pip install -r C:\Users\123\Desktop\requirements.txt
+```
+請將requirements.txt路徑，改為你電腦上的絕對路徑
 # 開放封閉原則(OCP)
 在設計後端的核心辨識邏輯時，採用開放封閉原則，目前的辨識方式，是使用我自己訓練及設計的神經網路模型，未來想要使用其它的辨識方式時，請依照以下步驟進行:
 ### :one:實作抽象類別:
