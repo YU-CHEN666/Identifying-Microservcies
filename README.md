@@ -22,7 +22,7 @@
 ```cmd
 pip install -r C:\Users\123\Desktop\requirements.txt
 ```
-請將requirements.txt路徑，改為你電腦上的絕對路徑
+請先下載requirements.txt，再把路徑改為你電腦上的絕對路徑
 # 開放封閉原則(OCP)
 在設計後端的核心辨識邏輯時，採用開放封閉原則，目前的辨識方式，是使用我自己訓練及設計的神經網路模型，未來想要使用其它的辨識方式時，請依照以下步驟進行:
 ### :one:實作抽象類別:
